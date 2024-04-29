@@ -1,7 +1,7 @@
 ## What is this program?
-This program compares token pair quotes on two DEXes, Aldrin and Raydium.
+This program compares token pair quotes on two DEXes, Jupiter and Raydium.
 Once there is a large enough price gap, it opens a position on both side to close this gap.
-For example, if the swap price of a token pair (A -> B) is traded at 100 on Aldrin, but 120 on Raydium, it will conduct a long on Aldrin and a short on Raydium in one transaction.
+For example, if the swap price of a token pair (A -> B) is traded at 100 on Jupiter, but 120 on Raydium, it will conduct a long on Jupiter and a short on Raydium in one transaction.
 
 #### Pre-requisites
 1. Create a burner Solana wallet
@@ -13,4 +13,3 @@ For example, if the swap price of a token pair (A -> B) is traded at 100 on Aldr
 npm i
 ts-node src/index.ts
 ```
-
