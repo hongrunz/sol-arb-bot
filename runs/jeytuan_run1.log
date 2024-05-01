@@ -1,0 +1,46 @@
+mint@MintBookPro:~/Documents/Solana/sol-arb-bot$ npm run start
+
+> sol-arb-bot@1.0.0 start
+> ts-node src/main.ts
+
+(node:27272) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+CoinGecko Price: 59965
+here
+{
+  data: <Buffer 06 00 00 00 00 00 00 00 fe 00 00 00 00 00 00 00 07 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 09 00 00 00 00 00 00 00 06 00 00 00 00 00 00 00 02 00 ... 702 more bytes>,
+  executable: false,
+  lamports: 246634800,
+  owner: PublicKey [PublicKey(675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8)] {
+    _bn: <BN: 4bd949c43602c33f207790ed16a3524ca1b9975cf121a2a90cffec7df8b68acd>
+  },
+  rentEpoch: 18446744073709552000,
+  space: 752
+}
+here
+{
+  data: <Buffer 06 00 00 00 00 00 00 00 fe 00 00 00 00 00 00 00 07 00 00 00 00 00 00 00 03 00 00 00 00 00 00 00 09 00 00 00 00 00 00 00 06 00 00 00 00 00 00 00 02 00 ... 702 more bytes>,
+  executable: false,
+  lamports: 246634800,
+  owner: PublicKey [PublicKey(675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8)] {
+    _bn: <BN: 4bd949c43602c33f207790ed16a3524ca1b9975cf121a2a90cffec7df8b68acd>
+  },
+  rentEpoch: 18446744073709552000,
+  space: 752
+}
+SOL_USDC pool info: pool total base 24540.643120076 pool total quote 3067095.730058 base vault balance 24540.643120076 quote vault balance 3067095.730058 base tokens in openorders 0 quote tokens in openorders  0 base token decimals 9 quote token decimals 6 total lp 44751 addedLpAmount 0
+SOL_USDC pool info: pool total base 24540.643120076 pool total quote 3067095.730058 base vault balance 24540.643120076 quote vault balance 3067095.730058 base tokens in openorders 0 quote tokens in openorders  0 base token decimals 9 quote token decimals 6 total lp 44751 addedLpAmount 0
+Price data: {
+  data: {
+    SOL: {
+      id: 'So11111111111111111111111111111111111111112',
+      mintSymbol: 'SOL',
+      vsToken: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
+      vsTokenSymbol: 'USDC',
+      price: 125.122371869
+    }
+  },
+  timeTaken: 0.00018960600004902517
+}
+mint@MintBookPro:~/Documents/Solana/sol-arb-bot$ 
+
