@@ -1,9 +1,10 @@
-import { Connection, PublicKey } from "@solana/web3.js";
+import { Connection, PublicKey, TransactionInstruction, sendAndConfirmTransaction } from "@solana/web3.js";
 import { TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import {
   TokenAccount,
   SPL_ACCOUNT_LAYOUT,
   LIQUIDITY_STATE_LAYOUT_V4,
+  getSwapInstruction,
 } from "@raydium-io/raydium-sdk";
 import { OpenOrders } from "@project-serum/serum";
 import BN from "bn.js";
@@ -100,6 +101,23 @@ export async function parsePoolInfo() {
     "addedLpAmount " +
       (addedLpAccount?.accountInfo.amount.toNumber() || 0) / baseDecimal
   );
+}
+
+export async function executeSwapOnRaydium(connection: Connection, quote: any, wallet: PublicKey) {
+  // Assume quote contains fields necessary for a swap, such as amount, source token, target token ...
+  const instruction = getSwapInstruction({
+      // Parameters based on Raydium's swap requirements
+      source: quote.source,
+      destination: quote.destination,
+      amount: quote.amount,
+      // any other necessary parameters
+  });
+
+  const transaction = new Transaction().add(instruction);
+  // Sign and send the transaction using the wallet's credentials
+  const signature = await sendAndConfirmTransaction(connection, transaction, [wallet]);
+  console.log(`Swap executed on Raydium with tx signature: ${signature}`);
+  return signature;
 }
 
 parsePoolInfo();

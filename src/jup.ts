@@ -1,7 +1,7 @@
 // import bs58 from 'bs58';
 import fetch from 'node-fetch';
 // import JSBI from 'jsbi';
-// import { Connection, PublicKey, Keypair } from '@solana/web3.js';
+// import { Connection, PublicKey, Keypair, Transaction, sendAndConfirmTransaction } from '@solana/web3.js';
 // import { Jupiter, RouteInfo, TOKEN_LIST_URL, SwapResult } from '@jup-ag/core';
 // import { Token } from '@solana/spl-token';
 
@@ -23,6 +23,23 @@ async function fetchPrice() {
         console.error('Error fetching price:', error);
         throw error;
     }
+}
+export async function executeSwapOnJupiter(connection: Connection, quote: RouteInfo, wallet: PublicKey) {
+    // Assume the quote is an object containing a pre-calculated route from the Jupiter SDK
+    const jupiter = await Jupiter.load({
+        connection,
+        cluster: "mainnet-beta",
+        user: wallet,
+    });
+
+    const { execute } = await jupiter.swap({
+        route: quote,
+        userPublicKey: wallet,
+    });
+
+    const { txid } = await execute();
+    console.log(`Swap executed on Jupiter with tx signature: ${txid}`);
+    return txid;
 }
 
 
